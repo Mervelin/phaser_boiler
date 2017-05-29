@@ -1,0 +1,31 @@
+{ 
+    "level1": [
+        {
+            "type": "image",
+            "key": "image_key",
+            "url": "assets/images/image.png",
+            "overwrite": false
+        },
+        {
+            "type": "spritesheet",
+            "key": "enemy",
+            "url": "assets/images/enemy.png",
+            "frameWidth": 60,
+            "frameHeight": 60
+        },
+        {
+            "type": "json",
+            "key": "mapdata",
+            "url": "assets/isotiles.json"
+        },
+        {
+            "type": "audio",
+            "key": "sfx",
+            "urls": ["assets/audio/sfx.mp3", "assets/audio/sfx.ogg"],
+            "autoDecode": true
+        }
+    ],
+    "meta": {
+        "version": "1.0"
+    }
+}
