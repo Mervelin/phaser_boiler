@@ -14,7 +14,7 @@ export default class Boot extends Phaser.State {
     //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
     this.stage.disableVisibilityChange = true;
 
-    if (this.game.device.desktop) {
+    /* if (this.game.device.desktop) {
       //  If you have any desktop specific settings, they can go in here
       this.scale.pageAlignHorizontally = true;
     } else {
@@ -24,7 +24,19 @@ export default class Boot extends Phaser.State {
       this.scale.setMinMax(480, 260, 1024, 768);
       this.scale.forceLandscape = true;
       this.scale.pageAlignHorizontally = true;
-    }
+    } */
+	
+	this.game.stage.backgroundColor = '#fff';
+
+    //scaling options
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    
+    //have the game centered horizontally
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
+
+    //physics system
+    this.game.physics.startSystem(Phaser.Physics.ARCADE);
   }
 
   preload() {

@@ -80,13 +80,9 @@ module.exports = function (grunt) {
         files: 'src/style/*.styl',
         tasks: ['stylus']
       },
-      images: {
-        files: 'src/assets/images/**/*',
-        tasks: ['copy:images']
-      },
-      audio:{
-        files: 'src/assets/audio/**/*',
-        tasks: ['copy:audio']
+      assets: {
+        files: 'src/assets/**/*',
+        tasks: ['copy:assets']
       }
     },
 
@@ -157,11 +153,8 @@ module.exports = function (grunt) {
       },
 
     copy: {
-      images: {
-        files: [ { expand: true, cwd: 'src/assets/images/', src: ['**'], dest: 'build/assets/images/' } ]
-      },
-      audio: {
-        files: [ { expand: true, cwd: 'src/assets/audio/', src: ['**'], dest: 'build/assets/audio/' } ]
+      assets: {
+        files: [ { expand: true, cwd: 'src/assets/', src: ['**'], dest: 'build/assets/'}]
       },
       phaserArcade: {
         files: [ {
@@ -210,8 +203,7 @@ module.exports = function (grunt) {
     'browserify',
     'jade',
     'stylus',
-    'copy:images',
-    'copy:audio',
+    'copy:assets',
     'copy:phaserArcade',
     'connect',
     'open',
@@ -225,8 +217,7 @@ module.exports = function (grunt) {
     'jade',
     'stylus',
     'uglify',
-    'copy:images',
-    'copy:audio',
+    'copy:assets',
     'copy:phaserArcadeMin',
     'cacheBust',
     'connect',
